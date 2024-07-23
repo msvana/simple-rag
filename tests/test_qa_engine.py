@@ -2,8 +2,8 @@ import chromadb
 import openai
 
 from base import chroma_collection
-from easy_cs import qa_engine
-from easy_cs import document_store
+from simple_rag import qa_engine
+from simple_rag import document_store
 
 
 EXAMPLE_DOCUMENTS = [

@@ -2,7 +2,7 @@ import chromadb
 import pytest
 
 from base import chroma_collection
-from easy_cs import document_store
+from simple_rag import document_store
 
 
 def test_add_documents(chroma_collection: chromadb.Collection):
