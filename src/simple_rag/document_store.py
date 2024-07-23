@@ -2,6 +2,8 @@ import uuid
 
 import chromadb
 
+from . import config
+
 
 class DocumentStore:
 
@@ -40,3 +42,7 @@ class DocumentStore:
         self._collection.delete(ids=[document_id])
 
         
+def get_default_document_store() -> DocumentStore:
+    client = chromadb.Client() 
+    collection = client.get_or_create_collection(config.CHROMA_COLLECTION)
+    return DocumentStore(collection=collection)

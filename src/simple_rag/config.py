@@ -1,0 +1,2 @@
+CHROMA_COLLECTION = "documents"
+
