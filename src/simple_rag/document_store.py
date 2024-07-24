@@ -14,6 +14,10 @@ class DocumentStore:
         if not documents:
             raise ValueError("No documents provided")
 
+        for document in documents:
+            if not document:
+                raise ValueError("Document cannot be empty")
+
         document_ids = [str(uuid.uuid4()) for _ in documents]
         self._collection.add(documents=documents, ids=document_ids)
 
@@ -42,7 +46,13 @@ class DocumentStore:
         self._collection.delete(ids=[document_id])
 
         
-def get_default_document_store() -> DocumentStore:
-    client = chromadb.Client() 
+def get_document_store() -> DocumentStore:
+    client = chromadb.PersistentClient() 
+    collection = client.get_or_create_collection(config.CHROMA_COLLECTION)
+    return DocumentStore(collection=collection)
+
+
+def get_document_store_for_testing() -> DocumentStore:
+    client = chromadb.Client()
     collection = client.get_or_create_collection(config.CHROMA_COLLECTION)
     return DocumentStore(collection=collection)
