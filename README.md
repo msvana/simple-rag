@@ -10,8 +10,7 @@ It is build on top of [FastAPI](https://fastapi.tiangolo.com/),
 ## Installation
 
 In this project I used Rye to manage the Python environment and dependencies.
-You can install Rye by following the instructions at [their website]
-(https://rye.astral.sh/).
+You can install Rye by following the instructions at [their website](https://rye.astral.sh/).
 
 After installing Rye, clone this and create the environment by running:
 
