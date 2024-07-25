@@ -3,6 +3,7 @@ import json
 import openai
 
 from . import document_store
+from . import config
 
 PROMPT_TEMPLATE = """
 You are an expert on answering questions related to the following documents:
@@ -57,10 +58,10 @@ class QAEngine:
         prompt = PROMPT_TEMPLATE.format(documents=documents_string, question=question)
 
         response = self._openai_client.chat.completions.create(
-            model="gpt-4o",
+            model=config.OPENAI_MODEL,
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.0,
-            max_tokens=1024,
+            temperature=config.OPENAI_TEMPERATURE,
+            max_tokens=config.OPENAI_MAX_TOKENS,
             tools=[
                 {"type": "function", "function": FUNCTION_DEFINITION}  # type: ignore
             ],

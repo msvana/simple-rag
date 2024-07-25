@@ -28,3 +28,7 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/simple_rag"]
+
+[tool.rye.scripts]
+db = {cmd = "chroma run"}
+api = {cmd = "fastapi run src/simple_rag/main.py --port 5000"}
