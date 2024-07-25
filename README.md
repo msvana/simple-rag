@@ -4,14 +4,14 @@ This is an implementation of a simple RAG (Retrieval-Augmented Generation)
 system allowing you to create a knowledge base by adding text documents and
 then querying it with natural language questions.
 
-It is build on top of (FastAPI)[https://fastapi.tiangolo.com/], 
-(Chroma)[https://trychroma.com/], and (OpenAI's GPT models)[https://openai.com/].
+It is build on top of [FastAPI](https://fastapi.tiangolo.com/), 
+[Chroma](https://trychroma.com/), and [OpenAI's GPT models](https://openai.com/).
 
 ## Installation
 
 In this project I used Rye to manage the Python environment and dependencies.
-You can install Rye by following the instructions at (their website)
-[https://rye.astral.sh/].
+You can install Rye by following the instructions at [their website]
+(https://rye.astral.sh/).
 
 After installing Rye, clone this and create the environment by running:
 
