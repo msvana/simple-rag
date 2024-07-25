@@ -50,6 +50,9 @@ rye run fastapi run src/simple_rag/main.py --port 6000
 
 ## Basic usage
 
+You can interact with the API using `curl` or any other HTTP client. You can also use the swagger UI 
+by going to `http://localhost:5000/docs`.
+
 ### Adding documents
 
 You can add documents to the knowledge base by sending a POST request to
